@@ -1,4 +1,6 @@
 import React from 'react';
+import mancha from './assets/Mancha.svg'
+import minhaFoto from './assets/Perfil.png'
 
 export default function App() {
   return (
@@ -36,18 +38,11 @@ export default function App() {
         <section className="relative min-h-screen flex items-center pt-24 px-6 md:px-16 lg:px-32">
           
           {/* Fundo Amarelo (Blob Orgânico) */}
-          <div className="absolute top-0 right-0 w-full md:w-[55%] h-[100vh] z-0 pointer-events-none overflow-hidden">
-            <svg 
-              viewBox="0 0 100 100" 
-              preserveAspectRatio="none" 
-              className="absolute top-0 right-0 h-full w-full"
-            >
-              <path 
-                d="M 40 0 C 15 35, 35 75, 0 100 L 100 100 L 100 0 Z" 
-                fill="#FDC435" 
-              />
-            </svg>
-          </div>
+          <img 
+            src={mancha} 
+            className="absolute top-0 right-0 z-0 pointer-events-none"
+            style={{ width: '55%', height: '100vh', objectFit: 'cover' }}
+          />
 
           <div className="relative z-10 grid md:grid-cols-2 gap-12 w-full max-w-7xl mx-auto h-full items-center">
             
@@ -75,20 +70,23 @@ export default function App() {
               </div>
             </div>
 
-            {/* Imagem Direita */}
-            <div className="relative flex justify-center items-end h-[500px] md:h-[700px]">
-              {/* NOTA: Substitua este link src pelo caminho da sua imagem real sem fundo (ex: '/foto-natalia.png') */}
-              <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                alt="Natália Castilho" 
-                className="relative z-10 h-[80%] md:h-[90%] object-cover object-top drop-shadow-2xl self-end mb-0 rounded-b-3xl [clip-path:polygon(0_0,_100%_0,_100%_90%,_0_100%)] md:[clip-path:none] mix-blend-normal"
-                style={{ 
-                  // Usando uma máscara suave temporária porque a imagem de placeholder tem fundo.
-                  // Remova esta linha 'maskImage' quando colocar a sua foto real em PNG transparente!
-                  maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)' 
+            {/* Imagem Direita NÃO CONSEGUI FAZER ESSA BOSTA FUNCIONAR
+            <div className="absolute top-0 right-0 z-10 w-full h-full">
+              <img
+                src={minhaFoto}
+                alt="Natália Castilho"
+                className="absolute -top-[200px] left-350 z-0 pointer-events-none"
+                style={{
+                  zIndex: 1,
+                  WebkitMaskImage: `url(${mancha})`,
+                  maskImage: `url(${mancha})`,
+                  WebkitMaskSize: '100% 100%',
+                  maskSize: '100% 100%',
                 }}
               />
-            </div>
+            </div> */}
+
+
           </div>
         </section>
 
