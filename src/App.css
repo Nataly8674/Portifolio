@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Nunito:wght@400;500;600;700&display=swap');
+
+:root {
+  --color-yellow: #FDC435;
+  --color-dark: #25282B;
+  --color-gray: #828282;
+  --color-bg: #F9FAFF;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-sans {
+  font-family: 'Nunito', sans-serif;
+}
