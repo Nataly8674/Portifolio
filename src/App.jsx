@@ -4,25 +4,12 @@ import Jotanunes from './assets/Jotanunes.svg'
 import minhaFoto from './assets/Perfil.png'
 import Biblioteca from './assets/Biblioteca.svg'
 import BibliotecaPNG from './assets/BibliotecaPNG.png'
+import NatAmarela from './assets/NatAmarela.svg'
+import "./App.css";
 
 export default function App() {
   return (
     <>
-      {/* Importação das Fontes para replicar o Figma */}
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Nunito:wght@400;500;600;700&display=swap');
-        
-        :root {
-          --color-yellow: #FDC435;
-          --color-dark: #25282B;
-          --color-gray: #828282;
-          --color-bg: #F9FAFF;
-        }
-
-        .font-serif { font-family: 'Playfair Display', serif; }
-        .font-sans { font-family: 'Nunito', sans-serif; }
-      `}</style>
-
       <div className="min-h-screen bg-[#F9FAFF] font-sans text-[#25282B] overflow-x-hidden selection:bg-[#FDC435] selection:text-white">
         
         {/* Navegação */}
@@ -41,10 +28,14 @@ export default function App() {
         <section className="relative min-h-screen flex items-start pt-80 px-6 md:px-16 lg:px-32">
           
           {/* Fundo Amarelo (Blob Orgânico) */}
-          <img 
-            src={mancha} 
+          <img
+            src={NatAmarela}
             className="hidden md:block absolute top-0 right-0 z-0 pointer-events-none"
-            style={{ width: '55%', height: '100vh', objectFit: 'cover' }}
+            style={{
+              width: '50%',
+              // height: '100vh',
+              // objectFit: 'cover',
+            }}
           />
 
           <div className="relative z-10 grid md: gap-16 w-full max-w-7xl mx-auto ml-24 h-full items-center">
@@ -72,23 +63,6 @@ export default function App() {
                   </button>
               </div>
             </div>
-
-            {/* Imagem Direita NÃO CONSEGUI FAZER ESSA BOSTA FUNCIONAR
-            <div className="absolute top-0 right-0 z-10 w-full h-full">
-              <img
-                src={minhaFoto}
-                alt="Natália Castilho"
-                className="absolute -top-[200px] left-350 z-0 pointer-events-none"
-                style={{
-                  zIndex: 1,
-                  WebkitMaskImage: `url(${mancha})`,
-                  maskImage: `url(${mancha})`,
-                  WebkitMaskSize: '100% 100%',
-                  maskSize: '100% 100%',
-                }}
-              />
-            </div> */}
-
 
           </div>
         </section>
@@ -150,7 +124,7 @@ export default function App() {
             </div>
 
             {/* Cartão de Projeto 1*/}
-            <div className="w-full bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col md:flex-row relative">
+            <div className="w-full bg-white rounded-4x1 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col md:flex-row relative">
               
               {/* Conteúdo do Projeto (Esquerda) */}
               <div className="w-full md:w-1/2 p-10 md:p-14 lg:p-16 flex flex-col justify-center space-y-6">
@@ -178,7 +152,7 @@ export default function App() {
             </div>
 
             {/* Cartão de Projeto 2 */}
-            <div className="w-full mt-6 bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden flex flex-col md:flex-row">
+            <div className="w-full mt-6 bg-white rounded-4x1 shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden flex flex-col md:flex-row">
               
               {/* Conteúdo do Projeto (Esquerda) */}
               <div className="w-full md:w-1/2 p-10 md:p-14 lg:p-16 flex flex-col justify-center space-y-6 md:order-2">
@@ -205,7 +179,7 @@ export default function App() {
             </div>
 
             {/* Cartão de Projeto 3 */}
-            <div className="w-full t-20 bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden flex flex-col md:flex-row">
+            <div className="w-full t-20 bg-white rounded-4x1 shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden flex flex-col md:flex-row">
               
               {/* Conteúdo do Projeto (Esquerda) */}
               <div className="w-full md:w-1/2 p-10 md:p-14 lg:p-16 flex flex-col justify-center space-y-6">
