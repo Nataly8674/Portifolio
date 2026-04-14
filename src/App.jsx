@@ -1,6 +1,9 @@
 import React from 'react';
 import mancha from './assets/Mancha.svg'
+import Jotanunes from './assets/Jotanunes.svg'
 import minhaFoto from './assets/Perfil.png'
+import Biblioteca from './assets/Biblioteca.svg'
+import BibliotecaPNG from './assets/BibliotecaPNG.png'
 
 export default function App() {
   return (
@@ -147,23 +150,51 @@ export default function App() {
             </div>
 
             {/* Cartão de Projeto 1*/}
-            <div className="w-full bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden flex flex-col md:flex-row">
+            <div className="w-full bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col md:flex-row relative">
               
               {/* Conteúdo do Projeto (Esquerda) */}
               <div className="w-full md:w-1/2 p-10 md:p-14 lg:p-16 flex flex-col justify-center space-y-6">
-                <h3 className="font-serif text-4xl font-bold text-[#25282B]">Project Name</h3>
+                <h3 className="font-serif text-4xl font-bold text-[#25282B]">Jotanunes — Plataforma de Aprendizado Corporativo</h3>
                 <p className="text-[#828282] text-lg leading-relaxed">
-                  I created this personal project in order to show how to create an interface in Figma using a portfolio as an example.
+                  Design de plataforma e-learning corporativa com sistema de certificados, gamificação, ranking e loja de pontos para funcionários da Jotanunes.
                 </p>
                 <div className="pt-2">
                   <button className="px-8 py-2.5 rounded-full border border-[#25282B] text-[#25282B] font-semibold hover:bg-[#25282B] hover:text-white transition-colors">
-                    View Project
+                    Veja mais!
+                  </button>
+                </div>
+              </div>
+
+              {/* Imagem do Projeto 1 (Direita) */}
+              <div className="w-full md:w-1/2 h-72 md:h-auto flex items-center justify-center relative overflow-visible">
+              <img 
+                  src={Jotanunes} 
+                  alt="Logo Jotanunes" 
+                  className="w-full h-full object-contain transform scale-[1.25] z-50 origin-center mr-32 mb-6"
+                />
+
+              </div>
+              
+            </div>
+
+            {/* Cartão de Projeto 2 */}
+            <div className="w-full mt-6 bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden flex flex-col md:flex-row">
+              
+              {/* Conteúdo do Projeto (Esquerda) */}
+              <div className="w-full md:w-1/2 p-10 md:p-14 lg:p-16 flex flex-col justify-center space-y-6 md:order-2">
+                <h3 className="font-serif text-4xl font-bold text-[#25282B]">Pizzaria Castelamary - Tablet de Auto Atendimento</h3>
+                <p className="text-[#828282] text-lg leading-relaxed">
+                  Design de interface para Totem de Autoatendimento com cardápio digital, fluxo de pedidos para consumo local e viagem e interface de pagamento.
+                </p>
+                <div className="pt-2">
+                  <button className="px-8 py-2.5 rounded-full border border-[#25282B] text-[#25282B] font-semibold hover:bg-[#25282B] hover:text-white transition-colors">
+                    Veja mais!
                   </button>
                 </div>
               </div>
 
               {/* Imagem do Projeto (Direita) */}
-              <div className="w-full md:w-1/2 h-72 md:h-auto relative">
+              <div className="w-full md:w-1/2 h-72 md:h-auto relative md:order-1">
                 <img 
                   src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                   alt="Project Preview" 
@@ -173,31 +204,31 @@ export default function App() {
               
             </div>
 
-            {/* Cartão de Projeto 2 */}
-            <div className="w-full bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden flex flex-col md:flex-row">
+            {/* Cartão de Projeto 3 */}
+            <div className="w-full t-20 bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden flex flex-col md:flex-row">
               
               {/* Conteúdo do Projeto (Esquerda) */}
               <div className="w-full md:w-1/2 p-10 md:p-14 lg:p-16 flex flex-col justify-center space-y-6">
-                <h3 className="font-serif text-4xl font-bold text-[#25282B]">Project Name</h3>
+                <h3 className="font-serif text-4xl font-bold text-[#25282B]">Nova Biblioteca - Aplicativo de Leitura</h3>
                 <p className="text-[#828282] text-lg leading-relaxed">
                   I created this personal project in order to show how to create an interface in Figma using a portfolio as an example.
                 </p>
                 <div className="pt-2">
                   <button className="px-8 py-2.5 rounded-full border border-[#25282B] text-[#25282B] font-semibold hover:bg-[#25282B] hover:text-white transition-colors">
-                    View Project
+                    Veja mais!
                   </button>
                 </div>
               </div>
 
               {/* Imagem do Projeto (Direita) */}
-              <div className="w-full md:w-1/2 h-72 md:h-auto relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                  alt="Project Preview" 
-                  className="absolute inset-0 w-full h-full object-cover"
+              <div className="w-full md:w-1/2 h-72 md:h-auto flex items-center justify-center relative overflow-visible">
+              <img 
+                  src={BibliotecaPNG} 
+                  alt="Logo Nova Biblioteca" 
+                  className="w-full h-full object-contain transform scale-[1] z-50 origin-center"
                 />
+
               </div>
-              
             </div>
             
             {/* NOTA: Pode copiar/colar o bloco "Cartão de Projeto" acima para adicionar mais projetos! */}
