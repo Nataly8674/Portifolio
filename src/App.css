@@ -14,3 +14,31 @@
 .font-sans {
   font-family: 'Nunito', sans-serif;
 }
+
+
+/* Cor dos pontinhos de paginação */
+.swiper-pagination-bullet-active {
+    background: #FDC435 !important;
+}
+
+/* Cor das setas laterais */
+.swiper-button-next, .swiper-button-prev {
+    color: #25282B !important;
+    background: white;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 20%;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+
+
+.swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 18px !important;
+    font-weight: bold;
+}
+
+
+/* Garante que os slides tenham a mesma altura */
+.swiper-slide {
+    height: auto;
+}

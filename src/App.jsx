@@ -5,12 +5,46 @@ import minhaFoto from './assets/Perfil.png'
 import Biblioteca from './assets/Biblioteca.svg'
 import BibliotecaPNG from './assets/BibliotecaPNG.png'
 import NatAmarela from './assets/NatAmarela.svg'
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 import "./App.css";
 
+
 export default function App() {
+
+  const meusProjetos = [
+    {
+      titulo: "Jotanunes — Plataforma de Aprendizado Corporativo",
+      desc: "Design de plataforma e-learning corporativa com sistema de certificados, gamificação e ranking.",
+      img: Jotanunes
+    },
+    {
+      titulo: "Pizzaria Castelamary - Tablet de Auto Atendimento",
+      desc: "Design de interface para Totem de Autoatendimento com cardápio digital e fluxo de pedidos.",
+      img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      titulo: "Nova Biblioteca - Aplicativo de Leitura",
+      desc: "Projeto pessoal para demonstrar criação de interfaces no Figma utilizando portfólio como exemplo.",
+      img: BibliotecaPNG
+    },
+    {
+      titulo: "Nova Biblioteca - Aplicativo de Leitura",
+      desc: "Projeto pessoal para demonstrar criação de interfaces no Figma utilizando portfólio como exemplo.",
+      img: BibliotecaPNG
+    },
+    // Adicione mais aqui para aumentar o carrossel!
+  ];
+
   return (
     <>
-      <div className="min-h-screen bg-[#F9FAFF] font-sans text-[#25282B] overflow-x-hidden selection:bg-[#FDC435] selection:text-white">
+      <div className="min-h-screen bg-[#EDEBE7] font-sans text-[#25282B] overflow-x-hidden selection:bg-[#FDC435] selection:text-white">
         
         {/* Navegação */}
         <header className="absolute top-0 w-full z-50 px-6 py-8 md:px-16 lg:px-32 flex justify-between items-center">
@@ -68,7 +102,7 @@ export default function App() {
         </section>
 
         {/* 2. Secção Sobre Mim */}
-        <section id="sobre" className="relative min-h-screen flex items-start pt-80 px-6 md:px-16 lg:px-32 bg-[#F9FAFF]">
+        <section id="sobre" className="relative min-h-screen flex items-start pt-80 px-6 md:px-16 lg:px-32 bg-[#33221B]">
 
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-16 w-full max-w-7xl mx-auto h-full items-center">
             
@@ -81,11 +115,11 @@ export default function App() {
             {/* Conteúdo Direita*/}
             <div className="flex flex-col space-y-6 max-w-none mt-10 md:mt-0 order-1 md:order-2 md:items-end w-full">
               
-              <h2 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold text-[#25282B] leading-[1.1] tracking-tight md:text-right">
+              <h2 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold text-[#EDEBE7] leading-[1.1] tracking-tight md:text-right">
                 Sobre Mim
               </h2>
               
-              <p className="text-[#828282] text-2xl leading-relaxed pt-2 max-w-2xl md:text-right">
+              <p className="text-[#EDEBE7] text-2xl leading-relaxed pt-2 max-w-2xl md:text-right">
                 Nisl arcu, scelerisque neque ut. Tincidunt amet, tempor duis tortor neque auctor dis ipsum. 
                 Pretium cras amet odio amet eleifend id sed cras sed. Aliquet risus posuere aliquet imperdiet sit.
               </p>
@@ -113,100 +147,47 @@ export default function App() {
           </div>
         </section>
 
-        {/* 3. Secção Projetos */}
-        <section id="projetos" className=" relative py-24 px-6 md:px-16 lg:px-32 bg-[#F9FAFF]">
-          <div className="w-full max-w-5xl mx-auto flex flex-col items-center space-y-20">
+{/* 3. SEÇÃO PROJETOS COM CARROSSEL */}
+        <section id="projetos" className="relative py-24 px-6 md:px-16 lg:px-32 bg-[#F9FAFF]">
+          <div className="w-full max-w-7xl mx-auto">
             
-            {/* Título da Secção */}
-            <div className="text-center">
+            <div className="text-center mb-16">
               <h2 className="font-serif text-5xl font-bold text-[#25282B]">Projetos</h2>
               <div className="w-16 h-1 bg-[#FDC435] mx-auto mt-4 rounded-full"></div>
             </div>
 
-            {/* Cartão de Projeto 1*/}
-            <div className="w-full bg-white rounded-4x1 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col md:flex-row relative">
-              
-              {/* Conteúdo do Projeto (Esquerda) */}
-              <div className="w-full md:w-1/2 p-10 md:p-14 lg:p-16 flex flex-col justify-center space-y-6">
-                <h3 className="font-serif text-4xl font-bold text-[#25282B]">Jotanunes — Plataforma de Aprendizado Corporativo</h3>
-                <p className="text-[#828282] text-lg leading-relaxed">
-                  Design de plataforma e-learning corporativa com sistema de certificados, gamificação, ranking e loja de pontos para funcionários da Jotanunes.
-                </p>
-                <div className="pt-2">
-                  <button className="px-8 py-2.5 rounded-full border border-[#25282B] text-[#25282B] font-semibold hover:bg-[#25282B] hover:text-white transition-colors">
-                    Veja mais!
-                  </button>
-                </div>
-              </div>
+            <Swiper
+              modules={[Navigation, Pagination]}
+              spaceBetween={30}
+              slidesPerView={1} // Padrão mobile
+              navigation
+              pagination={{ clickable: true }}
+              breakpoints={{
+                // Quando a tela for >= 768px (Tablet)
+                768: { slidesPerView: 2 },
+                // Quando a tela for >= 1024px (Desktop)
+                1024: { slidesPerView: 3 },
+              }}
+              className="pb-16" // Espaço para os pontinhos em baixo
+            >
+              {meusProjetos.map((proj, index) => (
+                <SwiperSlide key={index}>
+                  <div className="bg-white p-8 rounded-4x1 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col h-150">
+                    <div className="w-full aspect-square flex items-center justify-center bg-[#f2f2f2] rounded-3xl overflow-hidden p-6 mb-8">
+                      <img src={proj.img} alt={proj.titulo} className="max-w-full max-h-full object-contain" />
+                    </div>
+                    <div className="flex flex-col grow">
+                      <h3 className="font-serif text-2xl font-bold text-[#25282B] mb-4">{proj.titulo}</h3>
+                      <p className="text-[#828282] text-lg leading-relaxed grow">{proj.desc}</p>
+                      <button className="w-fit px-8 py-2.5 mt-4 rounded-full border border-[#25282B] text-[#25282B] font-semibold hover:bg-[#25282B] hover:text-white transition-all">
+                        Veja mais!
+                      </button>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
 
-              {/* Imagem do Projeto 1 (Direita) */}
-              <div className="w-full md:w-1/2 h-72 md:h-auto flex items-center justify-center relative overflow-visible">
-              <img 
-                  src={Jotanunes} 
-                  alt="Logo Jotanunes" 
-                  className="w-full h-full object-contain transform scale-[1.25] z-50 origin-center mr-32 mb-6"
-                />
-
-              </div>
-              
-            </div>
-
-            {/* Cartão de Projeto 2 */}
-            <div className="w-full mt-6 bg-white rounded-4x1 shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden flex flex-col md:flex-row">
-              
-              {/* Conteúdo do Projeto (Esquerda) */}
-              <div className="w-full md:w-1/2 p-10 md:p-14 lg:p-16 flex flex-col justify-center space-y-6 md:order-2">
-                <h3 className="font-serif text-4xl font-bold text-[#25282B]">Pizzaria Castelamary - Tablet de Auto Atendimento</h3>
-                <p className="text-[#828282] text-lg leading-relaxed">
-                  Design de interface para Totem de Autoatendimento com cardápio digital, fluxo de pedidos para consumo local e viagem e interface de pagamento.
-                </p>
-                <div className="pt-2">
-                  <button className="px-8 py-2.5 rounded-full border border-[#25282B] text-[#25282B] font-semibold hover:bg-[#25282B] hover:text-white transition-colors">
-                    Veja mais!
-                  </button>
-                </div>
-              </div>
-
-              {/* Imagem do Projeto (Direita) */}
-              <div className="w-full md:w-1/2 h-72 md:h-auto relative md:order-1">
-                <img 
-                  src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                  alt="Project Preview" 
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
-              
-            </div>
-
-            {/* Cartão de Projeto 3 */}
-            <div className="w-full t-20 bg-white rounded-4x1 shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden flex flex-col md:flex-row">
-              
-              {/* Conteúdo do Projeto (Esquerda) */}
-              <div className="w-full md:w-1/2 p-10 md:p-14 lg:p-16 flex flex-col justify-center space-y-6">
-                <h3 className="font-serif text-4xl font-bold text-[#25282B]">Nova Biblioteca - Aplicativo de Leitura</h3>
-                <p className="text-[#828282] text-lg leading-relaxed">
-                  I created this personal project in order to show how to create an interface in Figma using a portfolio as an example.
-                </p>
-                <div className="pt-2">
-                  <button className="px-8 py-2.5 rounded-full border border-[#25282B] text-[#25282B] font-semibold hover:bg-[#25282B] hover:text-white transition-colors">
-                    Veja mais!
-                  </button>
-                </div>
-              </div>
-
-              {/* Imagem do Projeto (Direita) */}
-              <div className="w-full md:w-1/2 h-72 md:h-auto flex items-center justify-center relative overflow-visible">
-              <img 
-                  src={BibliotecaPNG} 
-                  alt="Logo Nova Biblioteca" 
-                  className="w-full h-full object-contain transform scale-[1] z-50 origin-center"
-                />
-
-              </div>
-            </div>
-            
-            {/* NOTA: Pode copiar/colar o bloco "Cartão de Projeto" acima para adicionar mais projetos! */}
-            
           </div>
         </section>
 
