@@ -137,8 +137,8 @@ export default function App() {
         </section>
 
         {/* 3. Secção Projetos */}
-        <section id="projetos" className="relative py-24 px-6 md:px-16 lg:px-32 bg-[#F9FAFF]">
-          <div className="w-full max-w-5xl mx-auto flex flex-col items-center">
+        <section id="projetos" className=" relative py-24 px-6 md:px-16 lg:px-32 bg-[#F9FAFF]">
+          <div className="flex flex-col gap-20 w-full max-w-5xl mx-auto flex flex-col items-center">
             
             {/* Título da Secção */}
             <div className="text-center mb-16">
@@ -173,7 +173,7 @@ export default function App() {
               
             </div>
 
-                        {/* Cartão de Projeto 2 */}
+            {/* Cartão de Projeto 2 */}
             <div className="w-full bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden flex flex-col md:flex-row">
               
               {/* Conteúdo do Projeto (Esquerda) */}
