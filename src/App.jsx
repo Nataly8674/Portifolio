@@ -138,10 +138,10 @@ export default function App() {
 
         {/* 3. Secção Projetos */}
         <section id="projetos" className=" relative py-24 px-6 md:px-16 lg:px-32 bg-[#F9FAFF]">
-          <div className="flex flex-col gap-20 w-full max-w-5xl mx-auto flex flex-col items-center">
+          <div className="w-full max-w-5xl mx-auto flex flex-col items-center space-y-20">
             
             {/* Título da Secção */}
-            <div className="text-center mb-16">
+            <div className="text-center">
               <h2 className="font-serif text-5xl font-bold text-[#25282B]">Projetos</h2>
               <div className="w-16 h-1 bg-[#FDC435] mx-auto mt-4 rounded-full"></div>
             </div>
