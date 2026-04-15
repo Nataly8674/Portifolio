@@ -1,1 +1,29 @@
 @import "tailwindcss";
+
+@theme {
+  /* Aqui você define as cores para o Tailwind v4 reconhecer as classes */
+  --color-background: #f9fafb;
+  --color-foreground: #111827;
+  --color-primary: #111827;
+  --color-primary-foreground: #ffffff;
+  --color-muted: #f3f4f6;
+  --color-muted-foreground: #6b7280;
+  --color-border: #e5e7eb;
+  
+  --radius-custom: 1.5rem;
+}
+
+@layer base {
+  body {
+    /* Agora o Tailwind entende o que é 'bg-background' e 'text-foreground' */
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .tech-badge {
+    @apply flex items-center px-4 py-3 border border-border rounded-lg bg-white 
+           text-sm font-medium text-foreground shadow-sm transition-all hover:shadow-md;
+  }
+}
