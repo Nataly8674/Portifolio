@@ -153,7 +153,9 @@ export default function App() {
                 <a href="#projetos" className="bg-[#E17A5D] text-white px-10 py-3 rounded-md font-bold text-lg hover:scale-105 transition-all shadow-sm">
                   Projetos
                 </a>
-                <a href="#" className="bg-transparent border-2 border-[#1A1A1A] text-[#1A1A1A] px-10 py-3 rounded-md font-bold text-lg hover:bg-[#1A1A1A] hover:text-white transition-all">
+                <a href="https://www.linkedin.com/in/nat%C3%A1lia-castilho-055343247/"     
+                target="_blank" 
+                rel="noopener noreferrer"  className="bg-transparent border-2 border-[#1A1A1A] text-[#1A1A1A] px-10 py-3 rounded-md font-bold text-lg hover:bg-[#1A1A1A] hover:text-white transition-all">
                   LinkedIn
                 </a>
               </div>
